@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgroScan | Agricultura mais saudável com inteligência artificial</title>
+  <meta name="description" content="AgroScan usa inteligência artificial para identificar pragas e doenças em hortaliças.">
+  <meta name="theme-color" content="#F5F4EE">
+  <link rel="icon" id="favicon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233B5332'/%3E%3Cpath d='M16 6c6 4 8 11 0 20C8 17 10 10 16 6z' fill='%23F5F4EE'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- A. Cabeçalho -->
+    <header class="header">
+      <a class="brand" href="#top" aria-label="AgroScan">
+        <svg class="brand-mark" id="logo-svg" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="7" fill="currentColor"/>
+          <path d="M16 6c6 4 8 11 0 20C8 17 10 10 16 6z" fill="var(--bg)"/>
+          <path d="M16 11v14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M5 16h22" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <img class="brand-img" id="logo-img" alt="" hidden>
+        <span class="brand-name">AgroScan</span>
+      </a>
+      <span class="header-note">Projeto de TCC</span>
+    </header>
+
+    <main id="top">
+      <!-- B. Hero -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Tecnologia inteligente a serviço de uma agricultura mais saudável.</h1>
+          <p class="lead">O AgroScan usa inteligência artificial para ajudar a identificar pragas e doenças em hortaliças, a partir de uma foto.</p>
+
+          <!-- D. Botão principal (link editável em script.js → CONFIG.plataforma) -->
+          <a class="cta" id="cta" href="#" target="_blank" rel="noopener noreferrer">
+            <span>Acessar plataforma AgroScan</span>
+            <svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <figure class="scan" aria-label="Ilustração de uma folha sendo analisada pelo AgroScan">
+          <img class="scan-img" id="hero-img" alt="Folha analisada pelo AgroScan" hidden>
+          <svg id="hero-svg" viewBox="0 0 400 460" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="beam" x1="0" x2="1">
+                <stop offset="0" stop-color="#D97706" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#D97706"/>
+                <stop offset="1" stop-color="#D97706" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="leafClip"><path id="leafShape" d="M200 40C325 118 350 275 200 430C50 275 75 118 200 40Z"/></clipPath>
+            </defs>
+            <!-- grade fina de fundo -->
+            <g stroke="#3B5332" stroke-opacity=".08">
+              <path d="M0 115h400M0 230h400M0 345h400M100 0v460M200 0v460M300 0v460"/>
+            </g>
+            <!-- folha -->
+            <use href="#leafShape" fill="#79986D" fill-opacity=".28"/>
+            <use href="#leafShape" fill="none" stroke="#3B5332" stroke-width="1.6"/>
+            <g clip-path="url(#leafClip)" fill="none" stroke="#3B5332" stroke-linecap="round">
+              <path d="M200 40V430" stroke-width="1.6"/>
+              <g stroke-opacity=".55" stroke-width="1">
+                <path d="M200 120L280 90M200 120L120 90"/>
+                <path d="M200 180L300 142M200 180L100 142"/>
+                <path d="M200 240L315 196M200 240L85 196"/>
+                <path d="M200 300L300 262M200 300L100 262"/>
+                <path d="M200 355L270 322M200 355L130 322"/>
+              </g>
+              <!-- haste -->
+            </g>
+            <path d="M200 430V452" stroke="#3B5332" stroke-width="2" stroke-linecap="round"/>
+            <!-- ponto de detecção -->
+            <circle cx="262" cy="232" r="7" fill="#D97706" fill-opacity=".85"/>
+            <g class="bracket" stroke="#263B28" stroke-width="1.6" fill="none" stroke-linecap="square">
+              <path d="M236 206v-10h10M290 196h10v10M300 258v10h-10M246 268h-10v-10"/>
+            </g>
+            <g class="tag">
+              <text x="236" y="290" font-family="Hanken Grotesk, sans-serif" font-size="13" fill="#2C352D" font-weight="500">Possível mancha</text>
+            </g>
+            <!-- feixe de varredura -->
+            <g class="beam">
+              <rect x="30" y="-1.5" width="340" height="3" fill="url(#beam)"/>
+            </g>
+          </svg>
+        </figure>
+      </section>
+
+      <!-- C. Desenvolvedores (nomes e links editáveis em script.js → CONFIG.devs) -->
+      <section class="team" aria-labelledby="team-title">
+        <h2 id="team-title">Equipe de desenvolvimento</h2>
+        <ul class="devs" id="devs"></ul>
+      </section>
+    </main>
+
+    <!-- E. Rodapé -->
+    <footer class="footer">
+      <span><strong>AgroScan</strong>. Inovação a favor de quem cultiva.</span>
+      <span>© <span id="year"></span></span>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
